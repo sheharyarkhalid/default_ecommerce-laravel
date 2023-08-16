@@ -1,0 +1,205 @@
+
+/*variable  */
+@import url("https://site-assets.fontawesome.com/releases/v6.4.0/css/all.css");
+@import url("https://site-assets.fontawesome.com/releases/v6.4.0/css/sharp-solid.css");
+
+
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  -web-kit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Work Sans' ;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  float: left;
+  width: 100%;
+  margin: 0px;
+  font-family: 'Work Sans' !important;
+}
+
+:root{
+
+  --checkout_page_bg_color:#ffffff;
+
+  /* checkout box bg heading and text */
+  --checkout_process_border_color:rgba(0, 0, 0, 0.08);
+  --checkout_process_bg_color:#ffffff;
+  --checkout_process_shadow_color:0px 4px 24px rgba(0, 0, 0, 0.08);
+  --checkout_process_heading_color:#000000;
+  --checkout_process_text_color: rgba(0, 0, 0, 0.7);
+
+  /* cart summary text color */
+  --cart_summary_box_text_color: #9B9BB4;
+  --cart_summary_box_text_dividers_color:rgba(0, 0, 0, 0.16);
+  --cart_summary_box_text_color_three:#35A1DE;
+  --cart_summary_discount_data_text_color_one:#E21D38;
+  --cart_summary_discount_data_text_color_two:#0F994B;
+
+  /* loyalty popup color */
+  --summary_box_loyalty_point_pop_up_figure_bg_color:#F6F6F6;
+  
+  /*   checkout global btn bg and text color */
+
+  --checkout_btn_bg_color:#C93927;
+  --checkout_btn_text_color:#fff;
+
+   /*check out input colors  */
+  --checkout_input_border_color:rgba(0, 0, 0, 0.16);
+   --checkout_input_text_color:#212121;
+   --checkout_input_bg_color:#f5f5f5;
+   --checkout_input_lable_color:rgba(0, 0, 0, 0.5);
+   --checkout_input_placeholder_color:#bdbdbd;
+
+     /* check out guest btn color */
+  --checkout_guest_checkout_btn_bg_color:#212121;
+  --checkout_forms_guest_checkout_btn_text_color:#ffffff;
+
+   /* login with google and fb btn color */
+   --checkout_google_signin_btn_bg_color:#CF463A;
+   --checkout_google_signin_btn_text_color:#fff;
+   --checkout_google_signin_btn_shadow_color:rgb(0 0 0 / 12%);
+
+   --checkout_facebook_btn_bg_color:#3b5998;
+   --checkout_facebook_btn_text_color:#ffffff;
+
+   /* final checkout screen color */
+   --active_method_bg_color:#000000;
+   --shipping_method_border_color:rgba(0, 0, 0, 0.3);
+
+  }
+
+/*  complete checkout form inputs css start */
+.check_out_form_data_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px 12px;
+  grid-template-rows: auto;
+  grid-template-areas: ". .";
+}
+.check_out_form_content_box {
+  width: 100%;
+  display: grid;
+  gap: 22px 0px;
+}
+.check_out_form_field_box {
+  display: grid;
+  position: relative;
+}
+.check_out_single_field_box {
+  display: grid;
+  width: 100%;
+  position: relative;
+  height: 60px;
+  background-color: var( --checkout_input_bg_color);
+  border: none;
+  border-radius: 6px;
+}
+.check_out_single_field_box.check_out_textarea{
+  height: unset;
+}
+.check_out_single_field_box span {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  color:var(--checkout_input_lable_color);
+  position: absolute;
+  top: 10px;
+  left: 16px;
+}
+.check_out_single_field_box input {
+ 
+  height: 100%;
+  padding: 32px 38px 14px 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color:var( --checkout_input_text_color);
+  width: 100%;
+  background-color: unset;
+  border: unset;
+}
+.check_out_single_field_box textarea {
+  height: 100%;
+  padding: 32px 38px 14px 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color:var( --checkout_input_text_color);
+  width: 100%;
+  background-color: unset;
+  border: unset;
+}
+.check_out_single_field_box select {
+  height: 100%;
+  padding: 32px 38px 14px 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  color:var( --checkout_input_text_color);
+  width: 100%;
+  background-color: unset;
+  border: unset;
+}
+.check_out_single_field_box input::placeholder{
+color: var(--checkout_input_placeholder_color);
+}
+.check_out_single_field_box textarea::placeholder{
+  color: var(--checkout_input_placeholder_color);
+  }
+.check_out_form_field_box label.error {
+  color: red;
+  font-size: 12px;
+  margin: 0px;
+  position: absolute;
+  bottom: -17px;
+  line-height: 14px;
+  left: 3px;
+}
+.check_out_single_field_box i {
+  position: absolute;
+  bottom: 19px;
+  align-items: center;
+  right: 16px;
+  color:var( --checkout_input_text_color);
+  cursor: pointer;
+}
+
+.check_out_single_field_box input:focus-visible {
+  border: unset !important;
+  outline: unset;
+}
+.check_out_single_field_box textarea:focus-visible {
+  border: unset !important;
+  outline: unset;
+}
+.check_out_single_field_box select:focus-visible {
+  border: unset !important;
+  outline: unset;
+}
+.check_out_single_field_box input::placeholder {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color: var(--checkout_input_placeholder_color);
+}
+@media(max-width:992px){
+  .check_out_form_data_box {
+    grid-template-columns: 1fr;
+    grid-template-areas: ".";
+}
+}
+/*  complete checkout form inputs css end */

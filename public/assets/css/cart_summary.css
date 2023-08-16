@@ -1,0 +1,474 @@
+
+/* Cart bill Summary section start */
+
+.shopping_cart_total_bill_section {
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+  }
+  .shopping_cart_total_bill_box {
+    display: flex;
+    flex-direction: column;
+    background: var(--checkout_process_bg_color);
+    box-shadow: var(--checkout_process_shadow_color);
+    padding: 10px 15px 24px 15px;
+    position: sticky;
+    top: 0px;
+  }
+  .shopping_cart_total_bill_box_heading {
+    display: flex;
+    width: 100%;
+    padding-bottom: 15px;
+  }
+  .shopping_cart_total_bill_box_heading h5 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    text-transform: capitalize;
+    color: var(--checkout_process_heading_color);
+    margin: 0px;
+  }
+  .shopping_cart_total_bill_box_content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 24px;
+  }
+  .shopping_cart_total_bill_box_inner_content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 15px;
+  }
+  .shopping_cart_total_bill_box_inner_content:last-child{
+      padding-bottom: 0px;
+  }
+  .shopping_cart_total_bill_box_inner_content p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--checkout_process_heading_color);
+    margin: 0px;
+  }
+  .shopping_cart_total_bill_box_inner_content span {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--checkout_process_heading_color);
+    padding-left: 5px;
+  }
+  .total_bill_box_inner_subtotal_heading {
+    display: flex;
+    align-items: center;
+  }
+  .total_bill_box_inner_subtotal_heading p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--checkout_process_heading_color);
+    margin: 0px;
+    padding-right: 4px;
+  }
+  .total_bill_box_inner_subtotal_heading small {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+    color: var(--cart_summary_box_text_color_two);
+  }
+  .shopping_cart_total_bill_get_discount_box{
+display: flex;
+flex-direction: column;  
+width: 100%;
+}
+.shopping_cart_total_bill_box_get_discount_fields {
+    display: flex;
+    width: 100%;
+    border-top: 1px solid var(--cart_summary_box_text_dividers_color);
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+.shopping_cart_total_bill_box_discount_Coupon{
+    width: 100%;
+}
+.shopping_cart_total_bill_box_discount_Coupon .card{
+    border: unset !important; 
+}
+.summary_Apply_discount_Coupon_header a:hover{
+text-decoration: none !important;   
+}
+.summary_Apply_discount_Coupon_header a h5{
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+color: var(--cart_summary_box_text_color_three);
+margin: 0px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 100%;
+}
+.summary_Apply_discount_Coupon_body{
+    padding-top: 16px;
+    padding-bottom:4px;
+}
+.summary_discount_Coupon_input{
+position: relative;
+width: 100%;
+}
+.summary_discount_Coupon_input_field{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.summary_discount_Coupon_input_field input{
+    background: var(--checkout_input_bg_color);
+border: 1px solid var(--checkout_input_border_color);
+border-radius: 4px;
+height: 44px;
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+display: flex;
+align-items: center;
+text-transform: capitalize;
+color: var( --checkout_input_text_color);
+
+padding-left: 15px;
+padding-right: 80px;
+}
+.summary_discount_Coupon_input_field label.error{
+    padding-top: 10px;
+    color:red;
+    font-size: 12px;
+    margin: 0px;
+}
+.summary_discount_Coupon_btn{
+    display: flex;
+    height: 44px;
+    width: 74px;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: var(--cart_summary_discount_data_text_color_two);
+    border-radius: 4px;
+    justify-content: center;
+    
+}
+.summary_discount_Coupon_btn a{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+    color: var(--checkout_btn_text_color) !important;
+}
+.summary_discount_Coupon_btn button{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+    color: var(--checkout_btn_text_color) !important;
+}
+.shopping_cart_total_bill_box_loyalty_point{
+    width: 100%;
+}
+.shopping_cart_total_bill_box_loyalty_point p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--cart_summary_box_text_color_three);
+    margin: 0px;
+    display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.shopping_cart_total_bill_box_discounted_data_section{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.shopping_cart_total_bill_box_discounted_data{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-top: 1px solid var(--cart_summary_discount_data_border_color);
+    padding: 24px 0px;
+}
+.shopping_cart_total_bill_box_discounted_data_field{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 16px;
+}
+.shopping_cart_total_bill_box_discounted_data_field:last-child{
+    padding-bottom: 0px;
+}
+
+.shopping_cart_total_bill_box_discounted_data_field span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--cart_summary_discount_data_text_color_three);
+}
+
+.shopping_cart_total_bill_box_discounted_data_field small{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--cart_summary_discount_data_text_color_one);
+}
+.shopping_cart_total_bill_box_discounted_data_field p{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--cart_summary_discount_data_text_color_two);
+    margin: 0px;
+}
+  .shopping_cart_total_bill_divider {
+    border-bottom: 1px dashed var(--cart_summary_box_text_dividers_color);
+    width: 100%;
+    display: block;
+    float: left;
+    position: relative;
+  }
+  .shopping_cart_total_bill_divider:before {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 14px;
+    left: -15px;
+    top: -7px;
+    background: var(--cart_summary_box_text_dividers_color);
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+  }
+  .shopping_cart_total_bill_divider:after {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 14px;
+    right: -15px;
+    top: -7px;
+    background: var(--cart_summary_box_text_dividers_color);
+    border-top-left-radius: 11px;
+    border-bottom-left-radius: 11px;
+  }
+  .shopping_cart_total_bill_taxes_box {
+    display: flex;
+    padding: 16px 0px;
+  }
+  .shopping_cart_total_bill_taxes_box p {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--checkout_process_heading_color);
+    margin: 0px;
+  }
+  
+  .shopping_cart_total_bill_final_price_box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 24px 0px 15px 0px;
+  }
+  .shopping_cart_total_bill_final_price_box p {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--checkout_process_heading_color);
+    margin: 0px;
+  }
+  .shopping_cart_total_bill_final_price_box span {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--checkout_process_heading_color);
+    padding-left: 5px;
+  }
+  .shopping_cart_total_bill_proceeding_btn a {
+    height: 48px;
+    background: var(--checkout_btn_bg_color);
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+    color: var(--checkout_btn_text_color) !important;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+/* summary_box_loyalty_point_ pop up stye start */
+
+  .summary_box_loyalty_point_container {
+    max-width: 560px !important;
+    margin: 20px auto !important;
+    padding: 0px 20px !important;
+  }
+  .summary_box_loyalty_point_pop_up{
+    background: var(--checkout_process_bg_color);
+    border-radius: 4px;
+   padding: 32px 15px 72px 15px;
+   display: flex;  
+   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  pointer-events: auto;
+}
+#summary_box_loyalty_point {
+    padding: 0px !important;
+}
+.summary_box_loyalty_point_pop_up_figure{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 16px;
+}
+.summary_box_loyalty_point_pop_up_figure figure{
+    background: var(--summary_box_loyalty_point_pop_up_figure_bg_color);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px;
+}
+.summary_box_loyalty_point_pop_up_des{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
+    flex-direction: column;
+    text-align: center;
+}
+.summary_box_loyalty_point_pop_up_des h5{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 25px;
+    color: var(--checkout_process_heading_color);
+    margin: 0px;
+    padding-bottom: 9px;
+}
+.summary_box_loyalty_point_pop_up_des p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--checkout_process_text_color);
+    margin: 0px;
+}
+.summary_box_loyalty_point_pop_up_des p span{
+    color: var(--cart_summary_discount_data_text_color_two);
+}
+.summary_box_loyalty_point_pop_up_input{
+    display: flex;
+    align-items: flex-start;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.summary_box_loyalty_point_pop_up_input_field{
+    display: flex;
+    flex-direction: column;
+}
+.summary_box_loyalty_point_pop_up_input_field input{
+
+    border-radius: 2px;
+    height: 44px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    color: var( --checkout_input_text_color);
+    background: var(--checkout_input_bg_color);
+    border: 1px solid var(--checkout_input_border_color);
+    padding-left: 15px;
+    width: 255px;
+}
+.summary_box_loyalty_point_pop_up_input_field label.error{
+    font-size: 12px;
+    color: red;
+    margin: 0px;
+    padding-top: 5px;
+
+}
+.summary_box_loyalty_point_pop_up_btn{
+   padding-left: 12px;
+}
+.summary_box_loyalty_point_pop_up_btn a{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+    color: var(--checkout_btn_text_color) !important; 
+    background: var(--cart_summary_discount_data_text_color_two);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 147px;
+    height: 44px;
+}
+@media (max-width: 540px) {
+    .summary_box_loyalty_point_pop_up_input {
+        flex-direction: column;
+        align-items: center;
+    }
+    .summary_box_loyalty_point_pop_up_input_field label.error {
+        text-align: center;
+    }
+    .summary_box_loyalty_point_pop_up_btn {
+        padding-left: 0px;
+        padding-top: 15px;
+    }
+
+}
+  @media (max-width: 767px) {
+    .summary_box_loyalty_point_container  {
+      margin: 20px auto !important;
+    }
+}
+/*  summary_box_loyalty_point_ pop up stye end  */
+
+
+
+/* Cart bill Summary section End */
+

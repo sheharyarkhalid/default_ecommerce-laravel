@@ -1,0 +1,496 @@
+/* cart summary Box  css is on cart summary css file */
+
+/* All other css of this account page is Here */
+
+.check_out_option_section {
+  width: 100%;
+  padding: 20px 10px 40px 10px;
+  background-color: var(--checkout_page_bg_color);
+display: inline-block;
+height: 100vh;
+position: relative;
+}
+.checkout_container {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+.check_out_option_form_box {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 30px 30px;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: ". .";
+}
+
+/*account login/create section start */
+
+.check_out_option_account_form_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px 30px;
+  width: 100%;
+  grid-template-rows: auto;
+  grid-template-areas: ". .";
+}
+.check_out_option_form_box_one_content {
+  background: var(--checkout_process_bg_color);
+  padding: 25px 24px;
+  width: 100%;
+  display: grid;
+  float: left;
+  gap: 20px 0px;
+  border: 1px solid var(--checkout_process_border_color);
+  border-radius: 4px;
+}
+.check_out_option_form_box_one_content_header {
+  display: grid;
+  gap: 7px 0px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.check_out_option_form_box_one_content_header h3 {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: capitalize;
+  color: var(--checkout_process_heading_color);
+  margin: 0px;
+  text-align: center;
+}
+.check_out_option_form_box_one_content_header p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: capitalize;
+  color:var(--checkout_process_text_color);
+  margin: 0px;
+}
+.check_out_option_form_box_one_guest_btn a {
+  background: var(--checkout_guest_checkout_btn_bg_color);
+  border-radius: 4px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--checkout_forms_guest_checkout_btn_text_color);
+  display: flex;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-decoration: none;
+  transition: all 0.5s ease;
+}
+.check_out_option_form_box_one_guest_btn a span {
+  transition: all 0.5s ease;
+}
+.check_out_option_form_box_one_guest_btn a:hover {
+  color: #ffffff;
+  background: #212121;
+  text-decoration: none;
+}
+.check_out_option_form_box_one_guest_btn a:hover span {
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+
+.check_out_option_form_box_two_content {
+  background: var(--checkout_process_bg_color);
+  padding: 25px 24px;
+  width: 100%;
+  display: grid;
+  border: 1px solid var(--checkout_process_border_color);
+  border-radius: 4px;
+width: 100%;
+}
+.check_out_account_tabs_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-direction: column;
+  width: 100%;
+}
+.check_out_account_tabs{
+  background: #F4F5F6;
+  border-radius: 8px;
+  display: grid !important;
+  align-items: center;
+  margin-bottom: 20px !important;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+.check_out_account_tabs a {
+  padding: 8px 0px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 29px;
+  text-align: center;
+  color: #000;
+  text-decoration: unset;
+  cursor: pointer;
+}
+.check_out_account_tabs a:hover{
+  text-decoration: none;
+  color: inherit;
+
+}
+.check_out_account_tabs a.active{
+  background: #000000;
+    color: #fff !important;
+    text-decoration: unset;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.check_out_account_tab_content {
+  display: flex;
+  width: 100%;
+}
+.check_out_account_tab_data {
+  display: flex;
+  width: 100%;
+}
+.check_out_option_form_box_two_content_header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 15px;
+}
+.check_out_option_form_box_two_content_header h3 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  text-transform: capitalize;
+  color: var( --checkout_process_heading_color);
+  margin: 0px;
+
+  text-align: center;
+}
+
+.check_out_option_box_two_signin_form_signin_btn button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color:var( --checkout_btn_text_color);
+  background: var(--checkout_btn_bg_color);
+  border-radius: 4px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: unset;
+}
+.check_out_google_signin_btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+flex-direction: column;
+}
+.check_out_google_signin_btn a {
+  border-radius: 4px;
+  height: 48px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+width: 100%;
+}
+.check_out_google_signin_btn a:hover{
+  text-decoration: none;
+
+}
+.check_out_google_signin_btn a.google_btn {
+  background: var(--checkout_google_signin_btn_bg_color);
+  box-shadow: 0px 4px 24px var(--checkout_google_signin_btn_shadow_color);
+margin-bottom: 10px;
+}
+.check_out_google_signin_btn a.google_btn img {
+  background: #FFFFFF;
+  border-radius: 2px;
+  width: 26px;
+  padding: 5px;
+}
+.check_out_google_signin_btn a.google_btn span{
+  color: var(--checkout_google_signin_btn_text_color);
+}
+
+.check_out_google_signin_btn a span {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+
+  padding-left: 6px;
+}
+.check_out_google_signin_btn a.fb_btn{
+  background: var(--checkout_facebook_btn_bg_color);
+  color: var(--checkout_facebook_btn_text_color);
+}
+.check_out_google_signin_btn a.fb_btn span{
+  color: var(--checkout_facebook_btn_text_color);
+}
+
+
+.check_out_option_box_two_form_divider {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+.check_out_option_box_two_form_divider a{
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+text-align: center;
+color: var(--checkout_process_text_color) !important;
+cursor: pointer;
+}
+.check_out_option_box_two_form_divider {
+  width: 100%;
+}
+ .form_divider_lines{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 15px;
+}
+ .form_divider_lines span {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  color: var(--checkout_process_text_color);
+}
+.form_divider_lines small {
+  flex-grow: 5;
+  line-height: 0;
+  text-align: center;
+position: relative;
+  padding: 0px 10px 0px 15px;
+}
+ .form_divider_lines small:before {
+  content: " ";
+  display: block;
+  border-bottom: 1px solid var(--checkout_process_text_color);
+}
+
+
+/*account login/create section End */
+
+/* media query for account login/create section Start */
+
+@media(max-width:1140px){
+  .check_out_option_account_form_box {
+    gap: 30px 20px;
+}
+.check_out_option_form_box {
+  gap: 30px 20px;
+}
+  .check_out_option_form_box_one_content_header h3 {
+    font-size: 18px;
+    line-height: 28px;
+
+  }
+  .check_out_option_form_box_two_content_header h3 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .check_out_option_form_box_three {
+    display: none;
+}
+  .check_out_option_form_box {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 768px) {
+  .check_out_option_form_box_one_content_header {
+    display: none;
+}
+.check_out_option_form_box_one_content {
+  border: unset;
+  padding: 0px;
+}
+.check_out_option_account_form_box {
+  grid-template-columns: 1fr;
+  grid-template-areas: ".";
+  gap: 20px 30px;
+  max-width: 450px;
+  margin: 0 auto;
+}
+.check_out_option_form_box_two_content {
+  border-left: unset;
+  border-right: unset;
+  border-bottom: unset;
+}
+.check_out_option_form_box_two_content {
+  padding: 20px 0px;
+}
+
+.check_out_account_tabs_main {
+  margin-bottom: 20px;
+}
+
+
+}
+@media (max-width: 540px) {
+}
+@media (max-width: 400px) {
+ 
+}
+/* media query for account login/create section End */
+
+ 
+/* account_forget_password_popup stye start */
+
+.account_forget_password_container{
+  max-width: 560px !important;
+  margin: 20px auto !important;
+  padding: 0px 20px !important;
+}
+.account_forget_password_popup{
+  background: var(--checkout_process_bg_color);
+  border-radius: 4px;
+ padding: 32px 15px 72px 15px;
+ display: flex;  
+ align-items: center;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+-webkit-box-orient: vertical;
+-webkit-box-direction: normal;
+-ms-flex-direction: column;
+flex-direction: column;
+pointer-events: auto;
+}
+#account_forget_password_popup{
+  padding: 0px !important;
+}
+
+.account_forget_password_popup_des{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 25px;
+  flex-direction: column;
+  text-align: center;
+}
+.account_forget_password_popup_des h5{
+  font-style: normal;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 25px;
+  color: var(--checkout_process_heading_color);
+  margin: 0px;
+  padding-bottom: 9px;
+}
+.account_forget_password_popup form{
+  width: 100%;
+}
+
+.account_forget_password_popup_input{
+  display: flex;
+width: 100%;
+justify-content: center;
+flex-direction: column;
+max-width: 370px;
+margin: 0 auto;
+}
+.account_forget_password_popup_input_field{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 15px;
+}
+.account_forget_password_popup_input_field input{
+  background: var(--checkout_input_bg_color);
+  border: 1px solid var(--checkout_input_border_color);
+  border-radius: 2px;
+  height: 44px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-transform: capitalize;
+  color: var(--checkout_input_text_color);
+  padding-left: 15px;
+  width: 100%;
+}
+.account_forget_password_popup_input_field label.error{
+  font-size: 12px;
+  color: red;
+  margin: 0px;
+  padding-top: 5px;
+
+}
+.account_forget_password_popup_btn{
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+ width: 100%;
+}
+.account_forget_password_popup_btn a{
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color: var(--checkout_btn_text_color) !important; 
+  background: var(--checkout_btn_bg_color);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  cursor: pointer;
+}
+@media (max-width: 540px) {
+  .account_forget_password_popup_input {
+      flex-direction: column;
+      align-items: center;
+  }
+  .account_forget_password_popup_input_field label.error {
+      text-align: center;
+  }
+  .account_forget_password_popup_btn {
+      padding-left: 0px;
+      padding-top: 15px;
+  }
+
+}
+@media (max-width: 767px) {
+  .account_forget_password_container  {
+    margin: 20px auto !important;
+  }
+}
+/* account_forget_password_popup stye end  */
