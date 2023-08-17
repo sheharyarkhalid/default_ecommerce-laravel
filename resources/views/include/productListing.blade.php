@@ -33,6 +33,8 @@
     </div>
   </div>
 
+
+
   <div class="product_listing_main_section">
     <div class="product_container">
       <div class="shop_product_list_parent">
@@ -42,101 +44,11 @@
             <h3>Bags</h3>
           </div>
           <div class="product_list_parent">
+          @foreach ($products as $product) 
+     
+             @include("include/singleProduct")
 
-            <div class="single_product_box_main">
-              <div class="single_product_box">
-                <figure>
-                  <img src="https://static.tossdown.com/logos/25d2e6c6-5566-4bb4-b21e-73eb9b393765.jpg">
-
-                </figure>
-                <div class="single_product_box_figcaption">
-
-                  <div class="product_name">
-                    <p>Headset for office and gaming</p>
-                  </div>
-                  <div class="product_description">
-                    <p>This headset is the perfect all-around choice for those who are looking for comfortable,
-                      practical sound quality. </p>
-                  </div>
-                  <div class="price_tags">
-                    <div class="total_and_discount_price"><small class="orignal_price">PKR 850</small>
-                      <h6 class="discount_price text_decoration_line_through">PKR 333.50</h6>
-                    </div>
-                  </div>
-                  <div class="product_cart_btn"><a href="detail-page.html">Add to Cart</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="single_product_box_main">
-              <div class="single_product_box">
-                <figure>
-                  <img src="https://static.tossdown.com/logos/25d2e6c6-5566-4bb4-b21e-73eb9b393765.jpg">
-
-                </figure>
-                <div class="single_product_box_figcaption">
-
-                  <div class="product_name">
-                    <p>Gaming mouse</p>
-                  </div>
-                  <div class="product_description">
-                    <p>This gaming mouse is packed with features that make it the perfect tool for any gaming session.
-                    </p>
-                  </div>
-                  <div class="price_tags">
-                    <div class="total_and_discount_price"><small class="orignal_price">PKR 700</small></div>
-                  </div>
-                  <div class="product_cart_btn"><a href="detail-page.html">Add to Cart</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="single_product_box_main">
-              <div class="single_product_box">
-                <figure>
-                  <img src="https://static.tossdown.com/logos/25d2e6c6-5566-4bb4-b21e-73eb9b393765.jpg">
-
-                </figure>
-                <div class="single_product_box_figcaption">
-
-                  <div class="product_name">
-                    <p>Hot gaming headset</p>
-                  </div>
-                  <div class="product_description">
-                    <p>Are you looking for the ultimate gaming headset? Look no further than the Flexible Gaming
-                      Headset! With top-notch sound quality and stylish lights on the sides, you'll be ready for your
-                      next gaming session. </p>
-                  </div>
-                  <div class="price_tags">
-                    <div class="total_and_discount_price"><small class="orignal_price">PKR 1200</small></div>
-                  </div>
-                  <div class="product_cart_btn"><a href="detail-page.html">Add to Cart</a></div>
-                </div>
-              </div>
-            </div>
-            <div class="single_product_box_main">
-              <div class="single_product_box">
-                <figure>
-                  <img src="https://static.tossdown.com/logos/25d2e6c6-5566-4bb4-b21e-73eb9b393765.jpg">
-
-                </figure>
-                <div class="single_product_box_figcaption">
-
-                  <div class="product_name">
-                    <p>Xbox gaming console + controller</p>
-                  </div>
-                  <div class="product_description">
-                    <p>Experience the ultimate gaming experience with the Xbox Console! This sleek white Xbox console
-                      comes with the must-have Xbox wireless controller, so you can dive into the action right away.
-                    </p>
-                  </div>
-                  <div class="price_tags">
-                    <div class="total_and_discount_price"><small class="orignal_price">PKR 6800</small></div>
-                  </div>
-                  <div class="stock_box">
-                    <p>Not Available</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+             @endforeach
 
           </div>
         </div>

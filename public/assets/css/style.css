@@ -812,6 +812,22 @@ margin: 0px;
   /* box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08); */
   border-radius: 4px;
   height: 100%;
+  position: relative;
+  text-decoration: none;
+}
+.single_product_box:hover{
+  text-decoration: none;
+}
+.single_product_discount_percentage{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 4px 10px;
+  border-radius: 20px;
+ color: #fff;
+ font-weight: 500;
+ font-size: 14px;
+ background-color: #212121;
 }
 
 .single_product_box figure {
@@ -908,6 +924,10 @@ margin: 0px;
   color: #070707;
   text-transform: capitalize;
 }
+.total_and_discount_price .orignal_price span.pro_currency{
+  padding-right: 2px;
+  text-transform: uppercase;
+}
 
 .total_and_discount_price .discount_price.text_decoration_line_through {
   font-style: normal;
@@ -918,6 +938,10 @@ margin: 0px;
   margin: 0px !important;
   text-decoration: line-through;
   padding-left: 6px;
+}
+.total_and_discount_price .discount_price span.pro_currency{
+  padding-right: 2px;
+  text-transform: uppercase;
 }
 
 .product_cart_btn {

@@ -138,7 +138,7 @@ class Website extends Controller
             "cart_info"=>$cart_info
         );
         
-        return view('single_product', $data);
+        return view('detailPage', $data);
         
         
         
