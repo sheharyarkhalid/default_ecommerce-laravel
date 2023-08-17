@@ -64,7 +64,8 @@ class Website extends Controller
         $formatted_products = $this->global_formatter->format_products($products);
         
         $data = array(
-            "products"=> $formatted_products  
+            "products"=> $formatted_products,
+            "currency"=>'PKR'
         );
         
         
