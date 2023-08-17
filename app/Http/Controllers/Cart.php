@@ -156,7 +156,7 @@ class Cart extends Controller
             "categories_links" => array("hello"),
         );
          
-        $cart_page_template =  view($this->theme.'cart.cart_template',$data )->render();
+        $cart_page_template =  view('include.cartData',$data )->render();
         
         
         echo $cart_page_template;
@@ -181,7 +181,7 @@ class Cart extends Controller
         );
          
         // $flying_cart_template =  view($this->theme.'cart.flying_cart',$data )->render();
-        $cart_page_template =  view('cart.cart_template',$data )->render();
+        $cart_page_template =  view('include.cartData',$data )->render();
         
         
         echo $cart_page_template;
@@ -204,7 +204,7 @@ class Cart extends Controller
         );
          
         // $flying_cart_template =  view($this->theme.'cart.flying_cart',$data )->render();
-        $cart_page_template =  view('cart.cart_template',$data )->render();
+        $cart_page_template =  view('include.cartData',$data )->render();
         
         
         echo $cart_page_template;

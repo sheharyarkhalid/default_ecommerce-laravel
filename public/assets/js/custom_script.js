@@ -1,6 +1,11 @@
 
 $(document).ready(function () {
 
+    $(function () {
+      $(".draging_icon").draggable({ containment: "parent" });
+    });
+
+
 // footer js
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -170,9 +175,7 @@ for (i = 0; i < acc.length; i++) {
 
   });
 
-  $(function () {
-    $(".draging_icon").draggable({ containment: "parent" });
-  });
+
 
   
 

@@ -37,14 +37,16 @@
 
 
   <!-- dragable cart script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  
   <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
 
   <script src="{{asset('assets/js/jquery.ui.touch-punch.min.js')}}"></script>
 
   <script type=text/javascript src="{{asset('assets/js/custom_script.js')}}"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <script type=text/javascript src="https://cdn.jsdelivr.net/jquery.slick/1.5.9/slick.min.js"></script>
 
