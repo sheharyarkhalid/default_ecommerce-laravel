@@ -85,7 +85,7 @@ ul {
 .header_location_selector i {
   font-style: normal;
   font-size: 26px !important;
-  color: #ff0238;
+  color: #C93927;
   padding-right: 8px;
 }
 
@@ -789,6 +789,7 @@ margin: 0px;
   line-height: 30px;
   color: #000000;
   text-transform: capitalize;
+margin: 0px;
 }
 
 
