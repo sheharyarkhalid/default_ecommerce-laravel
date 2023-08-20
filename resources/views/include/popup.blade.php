@@ -18,7 +18,7 @@
         <div class="product_popup_detail_content">
           <div class="product_detail_page_figure_box">
             <figure>
-              <img src="https://static.tossdown.com/images/c1292ab5-1b84-4014-99d8-626feb1cf231.jpg" />
+              <img src="{{asset('images/logo.jpg')}}" />
             </figure>
           </div>
   

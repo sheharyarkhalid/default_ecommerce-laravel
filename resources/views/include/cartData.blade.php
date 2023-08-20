@@ -12,7 +12,7 @@
         <div class="cart_navigation_item_list">
             <div class="cart_navigation_single_item">
 
-                <figure><span>0</span><img src="{{asset('images/signup_logo.png')}}" /></figure>
+                <figure><span>0</span><img src="{{asset('images/logo.jpg')}}" /></figure>
                 <div class="cart_navigation_single_item_detail">
                     <p>BARBECUE SAUCE</p>
                     <a>View details</a>
@@ -37,7 +37,7 @@
             </div>
             <div class="cart_navigation_single_item">
 
-                <figure> <span>0</span><img src="{{asset('images/signup_logo.png')}}" /></figure>
+                <figure> <span>0</span><img src="{{asset('images/logo.jpg')}}" /></figure>
                 <div class="cart_navigation_single_item_detail">
                     <p>BARBECUE SAUCE</p>
                     <a>View details</a>

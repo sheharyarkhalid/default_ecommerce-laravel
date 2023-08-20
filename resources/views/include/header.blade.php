@@ -13,7 +13,7 @@
             </a>
           </div>
           <a class="header_logo"><img class="lazy" data-src=""
-              src="https://static.tossdown.com/site/73a7cf0f-cd0f-4a0d-ba40-8559468e62ac.webp" alt="logo" /></a>
+              src="{{asset('images/logo.jpg')}}" alt="logo" /></a>
           <div class="header_ecomerce_links">
             <a class="header_location_btn" type="button" data-toggle="modal" data-target="#web_header_search"><i
                 class="fa-regular fa-magnifying-glass"></i></a>

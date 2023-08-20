@@ -5,6 +5,7 @@
 
     <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+     <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/css/dragable_cart.css')}}" />
@@ -67,6 +68,167 @@
     
     @include('include/footer')
 
+<script>
+    // $(".add_to_cart").click(function(){
+    //     $(this).button('loading');
+    //     setTimeout(function() {
+    //         $(this).button('reset');
+    //     }, 5000);
+    // });
+    
+    // Button Loading Animation
+    $.button_loading = function(btn, action){
+        
+        if(action==true){
+            btn.attr("disabled", "disabled");
+        } else if (action==false ){
+            btn.removeAttr("disabled");
+        }
+        if(action && !btn.data('old-html')){
+            btn.data('old-html', btn.html()).prop("disabled", true).html("<i class='fa fa-spinner fa-spinn'></i>" );
+            return
+        }
+        if(!btn.data('old-html')) return;
+        btn.prop("disabled", false).html(btn.data('old-html')).data('old-html', false);
+    } 
+    
+    
+    
+    // Add to cart function
+    $(".add_to_cart").click(function() {
+        var $btn = $(this);
+        $.button_loading($btn, true);
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        var product_id = $(this).attr("data-id");
+        console.log($(".quantity_switcher").val());
+        
+        if($(".quantity_switcher").length != 0) {
+            var quantity = $(".quantity_switcher").val();
+        } else {
+            var quantity = 1;
+        }
+        
+       
+        $.ajax({
+			url: "/add_to_cart",
+			type: "POST",
+			data: { product_id : product_id,  quantity: quantity , _token :  csrfToken  },
+			// Complete callback (responseText is used internally)
+			success: function( updated_cart_html ) {
+				// Store the response as specified by the jqXHR object
+				
+				
+				$(".dropdown-cart").html(updated_cart_html);
+				setTimeout(function () {
+                  $.button_loading($btn, false);
+                }, 1000);
+			
+			}
+		});
+        
+        
+    });
+    
+   
+
+    $(document).on("click", ".cart-item-decrease", function() {
+        // var $btn = $(this);
+        // $.button_loading($btn, true);
+        
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        
+        var product_id = $(this).attr("data-id");
+        
+        $.ajax({
+			url: "/cart_decrease",
+			type: "POST",
+			data: { product_id : product_id , _token :  csrfToken  },
+		
+			// Complete callback (responseText is used internally)
+			success: function( response ) {
+				console.log(response);
+			
+				$("#cart_template").html(response);
+				// setTimeout(function () {
+    //               $.button_loading($btn, false);
+    //             }, 1000);
+			
+			},
+         
+		});
+        
+        
+    });
+    
+      $(document).on("click", ".cart-item-increase", function() {
+        // var $btn = $(this);
+        // $.button_loading($btn, true);
+        
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        
+        var product_id = $(this).attr("data-id");
+        
+        $.ajax({
+			url: "/cart_increase",
+			type: "POST",
+			data: { product_id : product_id , _token :  csrfToken  },
+		
+			// Complete callback (responseText is used internally)
+			success: function( response ) {
+				console.log(response);
+			
+				$("#cart_template").html(response);
+				// setTimeout(function () {
+    //               $.button_loading($btn, false);
+    //             }, 1000);
+			
+			},
+         
+		});
+        
+        
+    });
+    
+    
+      $(document).on("click", ".remove-cart-item", function() {
+        // var $btn = $(this);
+        // $.button_loading($btn, true);
+        $(this).parent().css("background", "#ffd6d6 !important")
+        var csrfToken = $('meta[name="csrf-token"]').attr('content');
+        
+        var product_id = $(this).attr("data-id");
+        
+        $.ajax({
+			url: "/cart_remove",
+			type: "POST",
+			data: { product_id : product_id , _token :  csrfToken  },
+		
+			// Complete callback (responseText is used internally)
+			success: function( response ) {
+				console.log(response);
+			
+				$("#cart_template").html(response);
+				// setTimeout(function () {
+    //               $.button_loading($btn, false);
+    //             }, 1000);
+			
+			},
+         
+		});
+        
+        
+    });
+    
+    
+    
+    
+    // $(".product-description ul").each(function(){
+    //     $(this).addClass("list-dot");     
+    // });
+    // $(".card-product-description ul").each(function(){
+    //     $(this).addClass("list-features");     
+    // });
+</script>
 
 
 </body>
