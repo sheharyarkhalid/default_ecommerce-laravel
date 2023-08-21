@@ -5,16 +5,8 @@
   <section class="product_detail_page_section">
     <div class="detail_page_container">
       <div class="product_detail_page_content">
-<<<<<<< Updated upstream
-        <div class="product_detail_page_figure_box">
-          <figure>
-            <img src="{{asset('images/logo.jpg')}}" />
-          </figure>
-        </div>
-=======
         
         @include('include/productDetails')
->>>>>>> Stashed changes
 
       </div>
     </div>
