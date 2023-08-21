@@ -60,12 +60,34 @@ class Website extends Controller
     
     public function index()
     {   
+<<<<<<< Updated upstream
         $products = $this->products_model->get_all();
         $formatted_products = $this->global_formatter->format_products($products);
         
         $data = array(
             "products"=> $formatted_products,
             "currency"=>'PKR'
+=======
+        
+        if($this->settings->shop_layout=="tab_menu"){
+            
+            $products = $this->get_tabbed_products();
+            
+        } else {
+             $products = $this->products_model->get_all();
+            $formatted_products = $this->global_formatter->format_products($products);
+        }
+            
+        
+        $cart = $this->cart->get_data();
+        $cart_info = $this->cart->get_info();
+        
+        $data = array(
+            "products"=> isset($formatted_products) ? $formatted_products : $products,
+            "currency"=>'PKR',
+             "cart"=>$cart,
+            "cart_info"=>$cart_info
+>>>>>>> Stashed changes
         );
         
         
@@ -109,6 +131,10 @@ class Website extends Controller
         $product_id = end($product_url_array);
         // echo $product_id;
         $product = ProductsModel::find($product_id);
+        // echo $product->cat_id;
+        // $category = CategoriesModel::where("cat_id", $product->cat_id)->first();
+        
+        $category =  DB::select("SELECT * FROM categories WHERE cat_id =".$product->cat_id." LIMIT 1 ");
         
         if($product_url == "" || !$product ) {
             return redirect()->back()->with('error', 'Product not found.');
@@ -130,6 +156,7 @@ class Website extends Controller
         
         $data = array(
             "product_info" => $product[0],
+            "category_info" => $category[0],
             "ui" => array(
                 "grid_layout"=>"horizontal",
             ),
@@ -142,6 +169,49 @@ class Website extends Controller
         return view('detailPage', $data);
         
         
+        
+    }
+    public function get_product_popup(Request $request){
+        $product_id = $request->input('product_id');
+        // echo $product_id;
+        $product = ProductsModel::find($product_id);
+        // echo $product->cat_id;
+        // $category = CategoriesModel::where("cat_id", $product->cat_id)->first();
+        
+        $category =  DB::select("SELECT * FROM categories WHERE cat_id =".$product->cat_id." LIMIT 1 ");
+        
+        if(!$product ) {
+            echo json_encode( 
+                array("error"=>"Product Not Found"),
+                true
+            );
+            exit;
+        }
+       
+        $product = $this->global_formatter->format_product($product);
+        
+        $categories_links = $this->categories_links(); 
+        
+        $cart = $this->cart->get_data();
+        $cart_info = $this->cart->get_info();
+        $data = array(
+            "product_info" => $product[0],
+            "category_info" => $category[0],
+            "currency" =>env("G_CURRENCY"),
+            "categories_links" => $categories_links,
+            "cart"=>$cart,
+            "cart_info"=>$cart_info
+        );
+        
+        $detail_page_popup_html =  view('include/productDetails', $data)->render();
+        
+        echo json_encode(
+            array(
+                "html"=>$detail_page_popup_html
+            ),
+            true
+        );
+        exit;
         
     }
     public function cart(){

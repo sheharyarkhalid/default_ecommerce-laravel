@@ -67,7 +67,7 @@ class Cart extends Controller
             
         } else {
             
-            DB::statement("UPDATE  cart SET  quantity = quantity + 1 WHERE product_id = ".$productId." AND session_userid = '".session('session_userid')."' ");
+            DB::statement("UPDATE  cart SET  quantity = quantity + ".$quantity." WHERE product_id = ".$productId." AND session_userid = '".session('session_userid')."' ");
 
         }
        
@@ -76,14 +76,21 @@ class Cart extends Controller
         $cart = $this->get_data();
         $cart_info = $this->get_info();
         $data = array(
+            "currency"=> env('G_CURRENCY'),
             "cart"=>$cart,
             "cart_info" => $cart_info
         );
         
         
-        $cart_template =  view('cart.flying_cart',$data )->render();
+        $cart_template =  view('include.cartData',$data )->render();
+        $ret = array(
+            "message"=> "Item(s) added in the Cart",
+            "type"=>"success",
+            "html"=> $cart_template,
+            "cart_info"=> $cart_info,
+        );
         
-        echo $cart_template;
+        echo json_encode($ret, true);
         
          
     }
@@ -113,7 +120,11 @@ class Cart extends Controller
         $cart_total = 0;
         $subtotal = 0;
         $discounted_total = 0;
+        $items_count = 0;
+        $qty_count=0;
         foreach($cart as $cart_item){
+            $items_count++;
+            $qty_count +=$cart_item['quantity'];
             $product = $cart_item['product'][0];
             $subtotal += $cart_item['quantity']*$product['price_float'];
             
@@ -130,7 +141,10 @@ class Cart extends Controller
             "total"=> $currency.$cart_total,
             "subtotal"=>$currency.$subtotal,
             "discount_total"=> $currency.$discounted_total,
-            "discount_float"=>$discounted_total
+            "discount_float"=>$discounted_total,
+            "items_count"=> $items_count,
+            "qty_count"=>$qty_count
+            
         );
         return $cart_info;
     }
@@ -158,8 +172,15 @@ class Cart extends Controller
          
         $cart_page_template =  view('include.cartData',$data )->render();
         
+         $ret = array(
+            "message"=> "Cart Updated",
+            "type"=>"success",
+            "html"=> $cart_page_template,
+            "cart_info"=> $cart_info,
+        );
         
-        echo $cart_page_template;
+        echo json_encode($ret, true);
+        // echo $cart_page_template;
         
                 
         
@@ -182,9 +203,17 @@ class Cart extends Controller
          
         // $flying_cart_template =  view($this->theme.'cart.flying_cart',$data )->render();
         $cart_page_template =  view('include.cartData',$data )->render();
+        $ret = array(
+            "message"=> "Cart Updated",
+            "type"=>"success",
+            "html"=> $cart_page_template,
+            "cart_info"=> $cart_info,
+        );
         
+        echo json_encode($ret, true);
         
-        echo $cart_page_template;
+        // echo $cart_page_template;
+        
         
     }
       public function remove_item(Request $request) {
@@ -206,8 +235,15 @@ class Cart extends Controller
         // $flying_cart_template =  view($this->theme.'cart.flying_cart',$data )->render();
         $cart_page_template =  view('include.cartData',$data )->render();
         
+        $ret = array(
+            "message"=> "Cart Updated",
+            "type"=>"success",
+            "html"=> $cart_page_template,
+            "cart_info"=> $cart_info,
+        );
         
-        echo $cart_page_template;
+        echo json_encode($ret, true);
+        // echo $cart_page_template;
         
                 
         

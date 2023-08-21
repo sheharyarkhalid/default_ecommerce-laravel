@@ -1,9 +1,3 @@
-   
-   <!-- remove this testing button when popup apply on add to cart btn -->
-   <a type="button" data-toggle="modal" data-target="#add_to_cart_popup" class="addToCartPopup">
-     add to cart popup
-    </a>
-
 
     <div class="modal fade" id="add_to_cart_popup" tabindex="-1" role="dialog"
     aria-labelledby="add_to_cart_popup" aria-hidden="true">
@@ -16,6 +10,7 @@
         </div>
 
         <div class="product_popup_detail_content">
+<<<<<<< Updated upstream
           <div class="product_detail_page_figure_box">
             <figure>
               <img src="https://static.tossdown.com/images/c1292ab5-1b84-4014-99d8-626feb1cf231.jpg" />
@@ -106,6 +101,9 @@
               </div>
             </div>
           </div>
+=======
+          
+>>>>>>> Stashed changes
         </div>
       
       </div>

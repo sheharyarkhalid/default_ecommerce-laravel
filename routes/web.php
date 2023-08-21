@@ -41,6 +41,9 @@ Route::post('/add_to_cart', [Cart::class, 'add']  );
 Route::post('/cart_decrease', [Cart::class, 'item_decrease_qty']  );
 Route::post('/cart_increase', [Cart::class, 'item_increase_qty']  );
 Route::post('/cart_remove', [Cart::class, 'remove_item']  );
+Route::post('/product_details', [Website::class, 'get_product_popup']  );
+
+
 
 
 Route::get('/login', [Website::class, 'login'])->name("login");

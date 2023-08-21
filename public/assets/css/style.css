@@ -969,6 +969,31 @@ margin: 0px;
   color: #FFFFFF !important;
   text-decoration: none;
 }
+.product_cart_btn button {
+  border: 1px solid #000000;
+  box-shadow: -3px 3px 0px 0px #000000;
+  background: #000;
+  border-radius: 2px;
+  width: 187px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+  color: #FFFFFF !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+.product_cart_btn button:focus-visible{
+  outline: unset !important;
+}
+.product_cart_btn button:focus{
+  outline: unset !important;
+}
 .product_cart_btn a:hover{
   text-decoration: none;
 }
@@ -1422,6 +1447,7 @@ padding-bottom: 5px;
 }
 div#add_to_cart_popup {
   padding: 10px 10px !important;
+  z-index: 99999999 !important;
 }
 .addToCartPopup_container {
   max-width: 1140px !important;
@@ -1482,6 +1508,7 @@ div#add_to_cart_popup {
   position: fixed;
   bottom: 0px;
   left: 0px;
+  z-index: 9;
 }
 .product_detail_page_parent {
   padding-bottom: 110px;
@@ -1489,5 +1516,52 @@ div#add_to_cart_popup {
   width: 100%;
 }
 }
-
+.modal-backdrop {
+  z-index: 9999999 !important;
+}
 /* add to cart popup css end */
+
+/*  backend css  */
+
+.cart_item_animate_right {
+opacity: 0;
+  transition: 0.2s ease-out;
+}
+button.add_to_cart:disabled{
+  opacity: 0.7;
+}
+
+
+.success_message_box{
+  position: fixed;
+  bottom: 60px;
+  z-index: 9999999999;
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  transition:0.3s ease-in-out;
+  display: flex;
+justify-content: center;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+}
+.success_message_box p{
+  box-shadow: none;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 16px;
+  background-color: rgb(46, 125, 50);
+  padding: 14px 20px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.success_message_box.show_add_message{
+  opacity: 1;
+  visibility: visible;
+  transition:0.3s ease-in-out;
+}
