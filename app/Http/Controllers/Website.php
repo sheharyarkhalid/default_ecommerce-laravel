@@ -64,9 +64,7 @@ class Website extends Controller
         $products = $this->products_model->get_all();
         $formatted_products = $this->global_formatter->format_products($products);
         
-        $data = array(
-            "products"=> $formatted_products,
-            "currency"=>'PKR'
+    
         
         if($this->settings->shop_layout=="tab_menu"){
             
