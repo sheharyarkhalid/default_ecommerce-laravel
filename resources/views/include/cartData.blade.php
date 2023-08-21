@@ -14,61 +14,6 @@
             </div>
         </div>
 
-<<<<<<< Updated upstream
-                <figure><span>0</span><img src="{{asset('images/signup_logo.png')}}" /></figure>
-                <div class="cart_navigation_single_item_detail">
-                    <p>BARBECUE SAUCE</p>
-                    <a>View details</a>
-                    <div class="cart_navigation_item_price">
-                        <strong>CAD 50.99</strong><span>CAD 10.1</span><small>10% off</small>
-                    </div>
-                    <div class="cart_navigation_qty_main">
-                        <div class="cart_navigation_qty_plus_minu_btns">
-                            <div class="counter_minus_btn">
-                                <a><i class="fa fa-minus"></i></a>
-                            </div>
-                            <span class="total_count_quantity">1</span>
-                            <div class="counter_plus_btn">
-                                <a><i class="fa fa-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="cart_navigation_del_btns">
-                            <a><i class="far fa-trash-alt"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="cart_navigation_single_item">
-
-                <figure> <span>0</span><img src="{{asset('images/signup_logo.png')}}" /></figure>
-                <div class="cart_navigation_single_item_detail">
-                    <p>BARBECUE SAUCE</p>
-                    <a>View details</a>
-                    <div class="cart_navigation_item_price">
-                        <strong>CAD 50.99</strong><span>CAD 10.1</span><small>10% off</small>
-                    </div>
-                    <div class="cart_navigation_qty_main">
-
-                        <div class="cart_navigation_qty_plus_minu_btns">
-                            <div class="counter_minus_btn">
-                                <a><i class="fa fa-minus"></i></a>
-                            </div>
-                            <span class="total_count_quantity">1</span>
-                            <div class="counter_plus_btn">
-                                <a><i class="fa fa-plus"></i></a>
-                            </div>
-                        </div>
-                        <div class="cart_navigation_del_btns">
-                            <a><i class="far fa-trash-alt"></i></a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-        </div>
-=======
->>>>>>> Stashed changes
     </div>
     <div class="cart_navigation_item_list">
         @if (count($cart)==0)

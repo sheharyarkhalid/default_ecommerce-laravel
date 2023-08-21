@@ -69,9 +69,6 @@
     @include('include/cart')
     
     @include('include/footer')
-<<<<<<< Updated upstream
-
-=======
     <div class="success_message_box ">
 <p>Item added to cart</p>
 </div>
@@ -319,7 +316,6 @@
     
   
 </script>
->>>>>>> Stashed changes
 
 
 </body>

@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Crypt;
 use App\Http\Controllers\Theme;
 use App\Http\Controllers\GlobalFormat;
 use App\Http\Controllers\CustomerSession;
+use App\Http\Controllers\Settings;
 // Models
 use App\Models\ProductsModel;
 use App\Models\CategoriesModel;
@@ -43,10 +44,11 @@ class Website extends Controller
         
         $this->products_model = new ProductsModel();
         $this->categories_model = new CategoriesModel();
-        
+        $this->settings = new Settings();
         $this->customersession = new CustomerSession();
         $this->global_formatter = new GlobalFormat();
         $this->user_model = new UserModel();
+        
         $this->cart = new Cart();
         
         
@@ -61,10 +63,6 @@ class Website extends Controller
     public function index()
     {   
 
-        $products = $this->products_model->get_all();
-        $formatted_products = $this->global_formatter->format_products($products);
-        
-    
         
         if($this->settings->shop_layout=="tab_menu"){
             
@@ -74,7 +72,7 @@ class Website extends Controller
              $products = $this->products_model->get_all();
             $formatted_products = $this->global_formatter->format_products($products);
         }
-            
+                 
         
         $cart = $this->cart->get_data();
         $cart_info = $this->cart->get_info();
@@ -84,30 +82,74 @@ class Website extends Controller
             "currency"=>'PKR',
              "cart"=>$cart,
             "cart_info"=>$cart_info
-
         );
         
         
         return view('home' , $data);
+    }
+    
+    public function get_tabbed_products(){
+        
+        $data = array();
+        
+        $categories = DB::select("SELECT * FROM categories, products WHERE products.cat_id = categories.cat_id  ORDER BY categories.cat_name ASC");
+        
+        foreach ($categories as $category ){
+            
+            $products = DB::select("SELECT * FROM products WHERE cat_id = ".$category->cat_id." ORDER BY product_name ASC");
+            $formatted_products = $this->global_formatter->format_products($products);
+            $data[ $category->cat_slug ]['cat_products'] = $formatted_products;
+            $data[ $category->cat_slug ]['info'] = $category;
+        }
+        
+        // dd($data);
+        return $data;
+        
+        
+        
+        
+        
     }
     public function shop($category_slug = ''){
         
         
         // dd(session("session_userid"));
         // die;
+        // echo $this->settings->shop_layout;
+        
         if($category_slug == ""){
-            $products = $this->products_model->get_all();
+            
+            if($this->settings->shop_layout=="tab_menu"){
+                
+                $products = $this->get_tabbed_products();
+                
+            } else {
+                $products = $this->products_model->get_all();    
+            }
+            
         } else {
-            $products = $this->products_model->get_by_category($category_slug);
+            
+            if($this->settings->shop_layout=="tab_menu"){
+             
+                $products = $this->get_tabbed_products();
+                
+            } else {
+             
+                $products = $this->products_model->get_by_category($category_slug);
+            }
         }
+        // dd($products);
         
         $categories_links = $this->categories_links(); 
-        $formatted_products = $this->global_formatter->format_products($products);
+        if($this->settings->shop_layout!="tab_menu"){
+            $formatted_products = $this->global_formatter->format_products($products);
+        }
+        
         $cart = $this->cart->get_data();
         $cart_info = $this->cart->get_info();
         
         $data = array(
-            "products" => $formatted_products,
+            "products" => isset($formatted_products) ? $formatted_products : $products ,
             "ui" => array(
                 "grid_layout"=>"horizontal",
             ),
