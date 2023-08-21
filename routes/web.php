@@ -53,3 +53,4 @@ Route::post('/login', [Website::class, 'login_auth'])->name('login_post');
     // Your protected routes here
     Route::get('/checkout', [Website::class, 'checkout'])->name("checkout");
 // });
+

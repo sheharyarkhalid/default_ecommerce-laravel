@@ -292,7 +292,7 @@ class Website extends Controller
             "cart"=>$cart,
             "cart_info"=>$cart_info
         );
-        return view('checkout.login', $data);
+        return view('checkout.accountPage', $data);
     }
     
     
@@ -319,7 +319,7 @@ class Website extends Controller
                 $error = "Incorrect Password";
                 return Redirect::back()->withErrors($error);
             }
-            die;
+           
         } else {
            $error = "This User doesn't exists";
             return Redirect::back()->withErrors($error);

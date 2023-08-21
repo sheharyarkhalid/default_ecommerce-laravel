@@ -1,16 +1,36 @@
 
-@extends('checkoutLayout')
+@extends('checkout/checkoutLayout')
 
 @section('content')
-  
+
 
 <div class="check_out_option_section">
     <div class="checkout_container">
-     <div class="check_out_option_form_box">
+      <?php
+      if(count($cart)!=0){
+        ?>
+        <div class="check_out_option_form_box">
+     <?php }
+        ?>
+      
 
       <!-- account login/create section start -->
+      <?php
+      if(count($cart)!=0){
+        ?>
         <div class="check_out_option_account_form_box"> 
-         <div class="check_out_option_form_box_one">
+        <?php 
+      }
+      else{
+        ?>
+        <div class="check_out_option_account_form_box_else">
+       <?php }
+        ?>
+        
+          <?php
+          if(count($cart)!=0){
+            ?>
+          <div class="check_out_option_form_box_one">
              <div class="check_out_option_form_box_one_content">
                  <div class="check_out_option_form_box_one_content_header">
                      <h3>No Account? No Problem</h3>
@@ -20,6 +40,8 @@
                   
              </div>
          </div>
+         <?php }
+         ?>
 
          <div class="check_out_option_form_box_two">
             <div class="check_out_option_form_box_two_content">
@@ -37,13 +59,14 @@
                       <h3>Login to your account</h3>
                   </div>
   
-                       <form>
+                       <form action="/login" method="post">
+                        @csrf
                           <div class="check_out_form_content_box">
                             
                               <div class="check_out_form_field_box">
                                 <div class="check_out_single_field_box">
                                   <span>Email</span>
-                                  <input type="email" placeholder="Enter your email" name="email">
+                                  <input type="email" name="user_email"  placeholder="Enter your email">
                                   <i class="fa-light fa-envelope"></i>
                                 </div>
                                 <label class="error" generated="true" for="email"></label>
@@ -58,10 +81,18 @@
                                 <label class="error" generated="true" for="password"></label>
                               </div>
 
-                             
+                                      @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                          <ul>
+                                              @foreach ($errors->all() as $error)
+                                                  <li>{{ $error }}</li>
+                                              @endforeach
+                                          </ul>
+                                        </div>
+                                     @endif
                                 
                               <div class="check_out_option_box_two_signin_form_signin_btn">
-                                 <button>Login in</button>
+                                <input class="font-md-bold btn btn-buy" type="submit" value="Sign In">
                               </div>  
                           </div>
                        </form>
@@ -72,7 +103,7 @@
                   
                     <div class="check_out_option_form_box_two_content_header">
                       <h3>Create your account</h3>
-                  </div>
+                    </div>
   
                        <form>
                           <div class="check_out_form_content_box">
@@ -113,12 +144,12 @@
                   </div>
 
 
-            </div>
+             </div>
               
                  
                      <div class="check_out_option_box_two_form_divider">
-                     <div> <a type="button" data-toggle="modal" data-target="#account_forget_password_popup">Forgot password?</a></div>
-                      <section class="modal fade" id="account_forget_password_popup" tabindex="-1" role="dialog" aria-labelledby="account_forget_password_popupLabel" aria-hidden="true">
+                      <div> <a type="button" data-toggle="modal" data-target="#account_forget_password_popup">Forgot password?</a></div>
+                       <section class="modal fade" id="account_forget_password_popup" tabindex="-1" role="dialog" aria-labelledby="account_forget_password_popupLabel" aria-hidden="true">
                         <div class="modal-dialog account_forget_password_container" role="document">
                             <div class="account_forget_password_popup">
                               
@@ -142,23 +173,25 @@
                               
                             </div>
                       
-                      </section>
+                       </section>
                       <div class="form_divider_lines"><small></small><span>or</span><small></small></div>
 
-                        </div>
+                      </div>
 
-                     <div class="check_out_google_signin_btn">
+                      <div class="check_out_google_signin_btn">
                      <a href="#" class="google_btn"><img src="{{asset('images/google_img.png')}}"> <span>Sign in with Google</span></a>
                      <a href="#" class="fb_btn"><i class="fab fa-facebook-f"></i> <span>Login with Facebook</span></a>
                     </div> 
 
             </div>
+         </div>
         </div>
-        </div>
- <!-- account login/create section End -->
-
-           <!-- Cart bill Summary section start -->
-           <div class="check_out_option_form_box_three">
+      <!-- account login/create section End -->
+      <?php
+       if(count($cart)!=0){
+        ?>
+          <!-- Cart bill Summary section start -->
+          <div class="check_out_option_form_box_three">
             <div class="shopping_cart_total_bill_box">
               <div class="shopping_cart_total_bill_box_heading"><h5>Cart Summary</h5></div>
               <div class="shopping_cart_total_bill_box_content">
@@ -275,15 +308,17 @@
              </div>
           </div> 
          <!-- Cart bill Summary section End -->
-
-
-
-     </div>
-
-    </div>
-
-    
-
+       <?php }
+      ?>
+        
+        <?php
+        if(count($cart)!=0){
+          ?>
+           </div>
+       <?php }
+          ?>
+   
 </div>
+
 
 @endsection
