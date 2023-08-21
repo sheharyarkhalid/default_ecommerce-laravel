@@ -6,6 +6,8 @@
  
 @include('include/banner')
  
+@include('include/popup')
+
 @include('include/businessHours')
  
 
