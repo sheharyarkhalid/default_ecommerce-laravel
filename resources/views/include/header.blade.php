@@ -17,7 +17,7 @@
           <div class="header_ecomerce_links">
             <a class="header_location_btn" type="button" data-toggle="modal" data-target="#web_header_search"><i
                 class="fa-regular fa-magnifying-glass"></i></a>
-            <a class="header_signin_btn"><i class="fa-regular fa-user"></i></a>
+            <a href="/login" class="header_signin_btn"><i class="fa-regular fa-user"></i></a>
             <a class="header_cart_btn"><i class="fa-regular fa-cart-shopping"></i></a>
           </div>
         </div>
@@ -41,7 +41,7 @@
       <div class="header_ecomerce_links">
         <a class="header_location_btn" type="button" data-toggle="modal" data-target="#web_header_search"><i
             class="fa-regular fa-magnifying-glass"></i></a>
-        <a class="header_signin_btn"><i class="fa-regular fa-user"></i></a>
+        <a href="/login" class="header_signin_btn"><i class="fa-regular fa-user"></i></a>
       </div>
 
     </div>

@@ -34,6 +34,10 @@ position: relative;
   grid-template-rows: auto;
   grid-template-areas: ". .";
 }
+.check_out_option_account_form_box_else{
+max-width: 540px;
+margin: 0 auto;
+}
 .check_out_option_form_box_one_content {
   background: var(--checkout_process_bg_color);
   padding: 25px 24px;
@@ -183,6 +187,22 @@ width: 100%;
 }
 
 .check_out_option_box_two_signin_form_signin_btn button {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 17px;
+  text-transform: capitalize;
+  color:var( --checkout_btn_text_color);
+  background: var(--checkout_btn_bg_color);
+  border-radius: 4px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border: unset;
+}
+.check_out_option_box_two_signin_form_signin_btn input {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;

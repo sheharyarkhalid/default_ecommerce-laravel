@@ -1,3 +1,4 @@
+
 <?php 
 
 namespace App\Http\Middleware;
@@ -12,7 +13,11 @@ class CustomerLoginAuth
     public function handle($request, Closure $next)
     {
         // Check if your custom session variable exists and indicates authentication
-        if (session()->has('customer_loggedin')) {
+        if (session()->has('customer_loggedin') && session()->has('login_userid')) {
+            
+            if($_SERVER['REQUEST_URI']=="/login"){
+                return redirect()->route('checkout');
+            }
             return $next($request);
         }
 
