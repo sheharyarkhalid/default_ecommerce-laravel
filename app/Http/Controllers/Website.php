@@ -60,14 +60,13 @@ class Website extends Controller
     
     public function index()
     {   
-<<<<<<< Updated upstream
+
         $products = $this->products_model->get_all();
         $formatted_products = $this->global_formatter->format_products($products);
         
         $data = array(
             "products"=> $formatted_products,
             "currency"=>'PKR'
-=======
         
         if($this->settings->shop_layout=="tab_menu"){
             
@@ -87,7 +86,7 @@ class Website extends Controller
             "currency"=>'PKR',
              "cart"=>$cart,
             "cart_info"=>$cart_info
->>>>>>> Stashed changes
+
         );
         
         
