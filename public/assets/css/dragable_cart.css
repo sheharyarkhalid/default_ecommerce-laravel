@@ -6,7 +6,7 @@
 
   }
   .draging_icon_btn{
-    bottom: 25px;
+    bottom: 85px;
     z-index: 999999;
     height: 100%;
     position: fixed;
@@ -71,7 +71,7 @@
     box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
     height: 100dvh;
     width: 450px;
-    z-index: 99999;
+    z-index: 9999999;
     top: 0px;
     display: flex;
     flex-direction: column;
@@ -137,6 +137,15 @@ padding: 25px 33px 0px 33px;
 height: calc(100dvh - 9em);
      
   }
+  p.empty_drag_text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    margin: 0px;
+    font-weight: 500;
+    font-size: 18px;
+}
   .cart_navigation_item_list::-webkit-scrollbar {
 width: 6px;
 }
@@ -245,18 +254,22 @@ font-style: normal;
 font-weight: 600;
 font-size: 14px;
 line-height: 16px;
-
-
+display: flex;
+align-items: center;
 color: #212121;
 margin: 0px;
 padding-right: 10px;
+}
+.cart_navigation_item_price .drag_Cart_curr {
+  padding-right: 4px;
 }
 .cart_navigation_item_price span{
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     line-height: 16px;
-    
+    display: flex;
+    align-items: center;
     color: #7a7a7a;
     margin: 0px;
     padding-right: 10px;
@@ -294,6 +307,10 @@ align-items: center;
 justify-content: center;
 margin: 0px !important;
 cursor: pointer;
+text-decoration: none;
+  }
+  .counter_minus_btn a:hover{
+    text-decoration: none;
   }
   .counter_minus_btn a i {
     font-size: 14px;
@@ -307,6 +324,9 @@ align-items: center;
 justify-content: center;
 margin: 0px !important;
 cursor: pointer;
+  }
+  .counter_plus_btn a:hover{
+    text-decoration: none;
   }
 
   .counter_plus_btn a i {
