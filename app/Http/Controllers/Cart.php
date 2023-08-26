@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -12,10 +11,9 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Session\SessionManager;
 
-
 use App\Http\Controllers\Theme;
-use App\Http\Controllers\Cart;
 use App\Http\Controllers\Website;
+
 // Models
 use App\Models\ProductsModel;
 use App\Models\CategoriesModel;

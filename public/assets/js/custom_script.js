@@ -73,7 +73,7 @@ for (i = 0; i < acc.length; i++) {
     var width = $("body").width();
     var offset = 0;
     if (width <= 992) {
-      offset = 150;
+      offset = 200;
     } else {
       offset = 200;
     }
@@ -85,7 +85,7 @@ for (i = 0; i < acc.length; i++) {
       var width = $("body").width();
       var offset = 0;
       if (width <= 992) {
-        offset = 150;
+        offset = 200;
       } else {
         offset = 200;
       }

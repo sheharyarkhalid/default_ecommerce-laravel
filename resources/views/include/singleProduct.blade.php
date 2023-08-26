@@ -6,11 +6,12 @@ $base_url = Request::getScheme() . '://' . Request::getHost() ;
 @endphp
 
 <div class="single_product_box_main">
-  @if ($product['discount'] != 0 )
-  <div class="single_product_discount_percentage">-{{ $product['discounted_percentage'] }}% </div>
-   @endif
+  
 
    <div class="single_product_box">
+      @if ($product['discount'] != 0 )
+  <div class="single_product_discount_percentage">{{round($product['discounted_percentage'],2)}} % </div>
+   @endif
          <figure>
            <img src="https://static.tossdown.com/logos/25d2e6c6-5566-4bb4-b21e-73eb9b393765.jpg">
     

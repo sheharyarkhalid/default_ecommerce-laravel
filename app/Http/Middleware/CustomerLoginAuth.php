@@ -1,6 +1,4 @@
-
 <?php 
-
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Session\SessionManager;

@@ -67,7 +67,7 @@
                 
             </div>
 
-            <div class="cart_navigation_checkout_btn"><a>Checkout</a></div>
+            <div class="cart_navigation_checkout_btn" ><a href="/checkout">Checkout</a></div>
         </div>
     </div>
 @endif

@@ -12,38 +12,61 @@
               </div>
             </a>
           </div>
-          <a class="header_logo"><img class="lazy" data-src=""
+          <a href="/" class="header_logo"><img class="lazy" data-src="{{asset('images/logo.jpg')}}"
               src="{{asset('images/logo.jpg')}}" alt="logo" /></a>
+          <div class="header_ecomerce_links_main">
+            <div class="header_page_list">
+              <a href="/">Home</a>
+              <a href="/shop">Shop</a>
+              <a>contact</a>  
+            </div>    
           <div class="header_ecomerce_links">
             <a class="header_location_btn" type="button" data-toggle="modal" data-target="#web_header_search"><i
                 class="fa-regular fa-magnifying-glass"></i></a>
             <a href="/login" class="header_signin_btn"><i class="fa-regular fa-user"></i></a>
-            <a class="header_cart_btn"><i class="fa-regular fa-cart-shopping"></i></a>
+            <a href="javascript:void(0);" class="header_cart_btn cart_count_check_btn">
+             <span class="cart_item_count"><?php echo $cart_info['items_count']; ?></span>
+              <i class="fa-regular fa-cart-shopping"></i>
+            </a>
           </div>
+        </div>
         </div>
       </div>
     </div>
   </header>
+
   <header class="mobile_header">
+    
     <div class="mobile_header_bar_1">
       <div class="mobile_header_bar_1_left">
-        <a class="header_logo"><img class="lazy" data-src=""
-            src="https://static.tossdown.com/site/73a7cf0f-cd0f-4a0d-ba40-8559468e62ac.webp" alt="logo" /></a>
-        <a type="button" data-toggle="modal" data-target="#current_location_modal" class="header_location_selector">
-          <i class="fas fa-map-marker-alt"></i>
-          <div class="header_location_data">
-            <span>Current Location <i class="fas fa-caret-down"></i></span>
-            <p>Al hamra Town, Lahore</p>
-          </div>
-        </a>
+        <a href="/" class="header_logo"><img class="lazy" data-src="{{asset('images/logo.jpg')}}"
+          src="{{asset('images/logo.jpg')}}" alt="logo" /></a>
+            <a type="button" data-toggle="modal" data-target="#current_location_modal" class="header_location_selector">
+              <i class="fas fa-map-marker-alt"></i>
+              <div class="header_location_data">
+                <span>Current Location <i class="fas fa-caret-down"></i></span>
+                <p>Al hamra Town, Lahore</p>
+              </div>
+            </a>
       </div>
 
       <div class="header_ecomerce_links">
         <a class="header_location_btn" type="button" data-toggle="modal" data-target="#web_header_search"><i
             class="fa-regular fa-magnifying-glass"></i></a>
         <a href="/login" class="header_signin_btn"><i class="fa-regular fa-user"></i></a>
+        <a href="javascript:void(0);" class="header_cart_btn cart_count_check_btn">
+          <span class="cart_item_count"><?php echo $cart_info['items_count']; ?></span>
+           <i class="fa-regular fa-cart-shopping"></i>
+         </a>
       </div>
 
+    </div>
+    <div class="mobile_header_bar_2">
+     <div class="mobile_header_bar_2_list">
+      <a href="/">Home</a>
+      <a href="/shop">Shop</a>
+      <a>contact</a>
+     </div>
     </div>
   </header>
   <div class="modal fade" id="web_header_search" tabindex="-1" role="dialog" aria-labelledby="web_header_search"

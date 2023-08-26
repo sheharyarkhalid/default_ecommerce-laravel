@@ -23,11 +23,12 @@ use App\Http\Controllers\Settings;
 use App\Models\ProductsModel;
 use App\Models\CategoriesModel;
 use App\Models\UserModel;
-
+use PDO;
 
 
 class Website extends Controller
 {
+
      
     public $theme = '';
     public $products_model = '';
@@ -50,14 +51,44 @@ class Website extends Controller
         $this->user_model = new UserModel();
         
         $this->cart = new Cart();
-        
-        
+
+   
+
         if ( session()->has('session_userid') ) {
             
         } else {
+        
             $this->customersession->create_temp_user();
         }
         
+    }
+    public function get_item_count(){
+
+        $cart_info = $this->cart->get_info();
+
+        $items_count=$cart_info['items_count'];
+       
+        if($items_count!=0){
+
+            if (session()->has('customer_loggedin') && session()->has('login_userid')) {
+                $data = array(
+                    "redirect"=>'checkout'
+                ); 
+                
+            }else{
+                $data = array(
+                    "redirect"=>'login'
+                ); 
+            }
+        }
+        else{
+            $data = array(
+                "error"=>'true'
+            ); 
+          
+        }
+          echo json_encode($data, true);
+       
     }
     
     public function index()
@@ -273,9 +304,17 @@ class Website extends Controller
     }
     
     public function checkout(){
-       
+        
+        $cart = $this->cart->get_data();
+        $cart_info = $this->cart->get_info();
+        
+        $data = array(
+            "currency" =>env("G_CURRENCY"),
+            "cart"=>$cart,
+            "cart_info"=>$cart_info
+        );
         // dd(session()->all());
-        return view('checkout.checkout_page');
+        return view('checkout.checkoutPage', $data);
     }
     
     
@@ -303,6 +342,7 @@ class Website extends Controller
         $password = $request->input('password');
         
         $user = DB::select("SELECT * FROM users WHERE user_email = $email LIMIT 1 ");
+        
         //  If user exists 
         if (count($user)!=0) {
             $user_info = $this->user_model->get_user($email);
@@ -313,13 +353,28 @@ class Website extends Controller
             $decrypted_pass = Crypt::decrypt($user_password_hash);
 
             if ( $password == $decrypted_pass ) {
-                $error = "Correct Password";
-                return Redirect::back()->withErrors($error);
+                
+                $user = $user[0];
+                
+                session()->put('login_userid',  $user->user_id);
+                session()->put('customer_loggedin',  1);
+                
+                if(session('session_userid') != $user->user_id){
+                    
+                    // echo 'different user';
+                    $this->customersession->cart_shift_to_loggedin_user($user->user_id);
+                    // session::forget("session_userid");
+                    
+                } else { 
+                }
+                
+                return redirect("/checkout");
+                
             } else {
                 $error = "Incorrect Password";
                 return Redirect::back()->withErrors($error);
             }
-           
+            die;
         } else {
            $error = "This User doesn't exists";
             return Redirect::back()->withErrors($error);

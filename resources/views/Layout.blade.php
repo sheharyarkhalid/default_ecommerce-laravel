@@ -60,6 +60,29 @@
 
 <body>
 
+  @if ($errors->any())
+  @foreach ($errors->all() as $error)
+  @if( $error=='empty_Cart' )
+  <script>
+   $(document).ready(function(){
+    $('.empty_cart_message_box').addClass('show_add_message');
+    setTimeout(function() {
+            $('.empty_cart_message_box').removeClass('show_add_message');
+         }, 2000);
+   });
+  
+  </script>
+  @else
+  {{"fail".$error; }}
+
+  @endif 
+
+ @endforeach
+
+@endif
+<div class="empty_cart_message_box">
+<p>your cart is empty!</p>
+</div>
 
     @include('include/header')
 
@@ -69,10 +92,38 @@
     @include('include/cart')
     
     @include('include/footer')
+
     <div class="success_message_box ">
-<p>Item added to cart</p>
-</div>
+     <p>Item added to cart</p>
+    </div>
 <script>
+
+$(document).ready(function(){
+    $('.cart_count_check_btn').click(function(e){
+      e.preventDefault();
+      var csrfToken = $('meta[name="csrf-token"]').attr('content');
+      console.log("click");
+     
+      $.ajax({
+        type: "POST",
+        url: "/check_item_count",
+        data:{ _token :  csrfToken},
+        success:function (data) {
+          var response = JSON.parse(data); 
+          if(response.error){   
+            $('.empty_cart_message_box').addClass('show_add_message');
+            setTimeout(function() {
+            $('.empty_cart_message_box').removeClass('show_add_message');
+            }, 2000);
+          }
+          else if(response.redirect){
+           window.location.href='/'+response.redirect;
+          }
+        } 
+      }); 
+    });
+   
+   });
     // $(".add_to_cart").click(function(){
     //     $(this).button('loading');
     //     setTimeout(function() {
