@@ -322,6 +322,23 @@ justify-content: space-between;
     justify-content: center;
   }
 
+  .shopping_cart_total_bill_proceeding_btn input {
+    height: 48px;
+    background: var(--checkout_btn_bg_color);
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: capitalize;
+    color: var(--checkout_btn_text_color) !important;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    border: unset;
+  }
+
 
 /* summary_box_loyalty_point_ pop up stye start */
 
